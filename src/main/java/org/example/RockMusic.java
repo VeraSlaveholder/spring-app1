@@ -2,21 +2,21 @@ package org.example;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class RockMusic implements Music {
-    private RockMusic(){}
+    List<String> musicList = new ArrayList<>();
 
-    public static RockMusic getRockMusic(){
-        return new RockMusic();
+    {
+        musicList.add("Wind cries Mary");
+        musicList.add("Creep");
+        musicList.add("Yellow");
     }
+
     @Override
-    public String getSong() {
-        return "Wind cries Mary";
-    }
-    public void doMyInit(){
-        System.out.println("Doing my initialization");
-    }
-    public void doMyDestroy(){
-        System.out.println("Doing my destruction");
+    public List<String> getSong() {
+        return musicList;
     }
 }

@@ -1,8 +1,9 @@
 package org.example;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+
+import java.util.Random;
 
 @Component
 public class MusicPlayer {
@@ -15,8 +16,14 @@ public class MusicPlayer {
         this.music2 = music2;
     }
 
-    public String playMusic() {
-        return "Playing " + music1.getSong()+", "+ music2.getSong();
+    public void playMusic(MusicalGenres musicalGenres) {
+        Random random = new Random();
+        int randomNumber = random.nextInt(3);
+        if (musicalGenres == MusicalGenres.CLASSICAL) {
+            System.out.println(music2.getSong().get(randomNumber));
+
+        } else System.out.println(music1.getSong().get(randomNumber));
+
     }
 }
 
