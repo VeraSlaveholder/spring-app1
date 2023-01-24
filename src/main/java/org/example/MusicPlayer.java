@@ -16,14 +16,8 @@ public class MusicPlayer {
         this.music2 = music2;
     }
 
-    public void playMusic(MusicalGenres musicalGenres) {
-        Random random = new Random();
-        int randomNumber = random.nextInt(3);
-        if (musicalGenres == MusicalGenres.CLASSICAL) {
-            System.out.println(music2.getSong().get(randomNumber));
-
-        } else System.out.println(music1.getSong().get(randomNumber));
-
+    public String playMusic() {
+       return "Playing "+ music1.getSong()+", "+music2.getSong();
     }
 }
 
